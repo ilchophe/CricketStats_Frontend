@@ -1,0 +1,15 @@
+version: '3'
+services:
+    api:
+        image: "cricketstatsgraphqlfrontend"            
+        hostname: "cricketstatsfrontend"
+        container_name: "cricketstatsfrontend"
+        ports:
+            - 8081:80
+        networks:
+            - cricket-net
+
+networks:
+    cricket-net:
+        external: true
+        name: cricket-net
