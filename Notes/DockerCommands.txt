@@ -1,1 +1,21 @@
-docker build -t cricketstatsgraphqlfrontend .
+docker build -t ilchophe/cricketstatsgraphqlfrontend .
+
+
+
+docker stack deploy cricketstats-swarm -c docker-compose.yaml
+
+docker stack ls
+
+docker stack services cricketstats-swarm
+
+docker stack ps cricketstats-swarm
+
+docker service scale cricketstats-swarm_frontend=4
+
+docker service ls
+
+docker service ps cricketstats-swarm_frontend
+
+docker stack rm cricketstats-swarm_
+
+docker swarm leave --force #maybe not run this

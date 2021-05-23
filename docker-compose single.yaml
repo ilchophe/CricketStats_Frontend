@@ -1,12 +1,15 @@
 version: '3'
 services:
-    frontend:
+    api:
         image: "ilchophe/cricketstatsgraphqlfrontend"            
         hostname: "cricketstatsfrontend"
+        container_name: "cricketstatsfrontend"
         ports:
             - 8081:80
         networks:
-            - cricket-net-swarm
+            - cricket-net
 
 networks:
-    cricket-net-swarm:
+    cricket-net:
+        external: true
+        name: cricket-net

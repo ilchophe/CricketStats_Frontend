@@ -1,0 +1,32 @@
+@page "/countries"
+
+<h1>Countries</h1>>
+
+@if (countries == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Country Code</th>
+                <th>Country Name</th>
+                <th>Last Updated</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var country in countries)
+            {
+                <tr>
+                    <td>@launch.Id</td>
+                    <td>@launch.IsTentative.ToString()</td>
+                    <td>@launch.LaunchDateLocal.ToString()</td>
+                    <td>@launch.MissionName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
