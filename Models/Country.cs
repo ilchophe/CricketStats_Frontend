@@ -11,13 +11,13 @@ namespace CricketStats_Frontend.Models
         [JsonPropertyName("id")]
         public int Id { get; set; }
 
-        [JsonPropertyName("countrycode")]
+        [JsonPropertyName("countryCode")]
         public string CountryCode { get; set; }
 
-        [JsonPropertyName("countrydesc")]
+        [JsonPropertyName("countryDesc")]
         public string CountryDesc { get; set; }
 
-        [JsonPropertyName("lastupdated")]
+        [JsonPropertyName("lastUpdated")]
         public DateTimeOffset LastUpdated { get; set; }
     }
 }

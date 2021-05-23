@@ -1,6 +1,8 @@
 @page "/countries"
 
-<h1>Countries</h1>>
+<h1>Countries</h1> 
+
+<p><a href="#" class="btn btn-success" role="button">New</a></p>
 
 @if (countries == null)
 {
@@ -8,25 +10,34 @@
 }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>Country Code</th>
-                <th>Country Name</th>
-                <th>Last Updated</th>
-            </tr>
-        </thead>
-        <tbody>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+
             @foreach (var country in countries)
-            {
-                <tr>
-                    <td>@launch.Id</td>
-                    <td>@launch.IsTentative.ToString()</td>
-                    <td>@launch.LaunchDateLocal.ToString()</td>
-                    <td>@launch.MissionName</td>
-                </tr>
-            }
-        </tbody>
-    </table>
+                {
+
+                var imageurl = $"images/{country.CountryCode}.png";    
+
+                <div class="col">     
+                    <div class="card" style="width: 18rem;">
+                        <img src="@imageurl" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">@country.CountryDesc</h5>
+                            <p class="card-text">Country ID: @country.Id</p>
+                            <p class="card-text">Country Code: @country.CountryCode</p>
+                            <p class="card-text">Last Updated: @country.LastUpdated</p>
+                            <div class="d-grid gap-2 d-md-block">
+                                <a href="#" class="btn btn-primary" role="button">Edit</a>
+                                <a href="#" class="btn btn-danger" role="button">Delete</a>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                }
+
+    </div>
+      
+
+
 }
